@@ -22,5 +22,5 @@ jobs:
           role-to-assume: arn:aws:iam::152815104156:role/sts-lab-2-target
           role-session-name: OIDCSession
 
-      - run: aws iam get-role --role-name sts-lab-2-target --query "Role.PermissionsBoundary" --output json
+      - run: aws secretsmanager get-secret-value --region us-east-1 --secret-id arn:aws:secretsmanager:us-east-1:152815104156:secret:flag_sts_lab_2-ppxzg8
         shell: bash
