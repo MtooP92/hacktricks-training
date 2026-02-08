@@ -22,5 +22,5 @@ jobs:
           role-to-assume: arn:aws:iam::152815104156:role/sts-lab-2-target
           role-session-name: OIDCSession
 
-      - run: aws sts get-caller-identity
+      - run: aws iam list-role-policies --role-name sts-lab-2-target
         shell: bash
