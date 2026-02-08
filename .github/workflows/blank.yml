@@ -22,5 +22,5 @@ jobs:
           role-to-assume: arn:aws:iam::152815104156:role/sts-lab-2-target
           role-session-name: OIDCSession
 
-      - run: aws secretsmanager list-secrets --region us-east-1 | grep -i flag
+      - run: aws secretsmanager list-secrets --query "SecretList[?contains(Name, 'flag')].[Name,ARN]" --output table
         shell: bash
